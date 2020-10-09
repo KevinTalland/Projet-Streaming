@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(0,0,0,0.87);
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+    background: #fbfbfb;
+}
+
+.affiche {
+    width: 100px;
+    height: auto;
+}
+
+section {
+    background: #FFF;
+    float:left;
+    height: auto;
+    width: 70%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    display: flex;
+}
+
+section div.article {
+    flex: 1 1 20%;
+}
+
+div.article .affiche {
+    margin: 1em auto;
+}
+
+div.article {
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.topbar {
+    position: fixed;
+    background: #FFF;
+    top:0;
+    left: 0;
+    right: 0;
+    padding: 3vh 2vw;
+    z-index: 4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.topbar nav {
+    float: left;
+}
+
+.topbar nav a {
+    color: #9F9F9F;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0 4vw;
+}
+
+.topbar nav a:hover, .topbar nav a.active {
+    color: #000000;
+    transition: color .3s;
+}
+
+.social {
+    float: right;
+}
+
+.social a {
+    padding: 2vw;
+    opacity: .5;
+}
+
+.social a:hover {
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.banniere {
+    font-size: 50px;
+    height: 65vh;
+    background: url("banner.jpg");
+    background-position: center center;
+    background-size: cover;
+    transition: animation 3s;
+    animation: apparition 3s;
+}
+
+@keyframes apparition {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.article {
+    overflow: hidden;
+    display:flex;
+    margin: 6vh auto;
+    flex-direction: row;
+    max-width: 60vw;
+}
+
+.article-img {
+    margin-right: 1vw;
+}
+
+.container-article {
+    display:flex;
+    flex-direction: column;
+    flex: 0 1 60%;
+}
+
+.article-date {
+    font-weight: 300px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 1em;;
+}
+
+.article-title {
+    font-size: 2rem;
+    margin: 1rem 0px;
+    font-family: "Cardo", serif;
+    margin: 0 1em 0 0;
+}
+
+.article-title a {
+    text-decoration: none;
+    color: black
+}
+
+.article-title a:hover {
+    text-decoration: underline;
+}
+
+.aside {
+    background: #fbfbfb;
+    float:right;
+    height: auto;;
+    width: 30%;
+    padding: 3vw;
+    z-index: 1;
+    position: relative;
+}
+
+.aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+
+.aside li {
+    padding: 0.5rem 0;
+}
+
+.aside a {
+    text-decoration: none;
+    color: #9f9f9f
+}
+
+.aside a:hover {
+    text-decoration: underline
+}
+
+.sidebar-title {
+    color: black;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.sidebar-title:first-child {
+    margin-top: 0;
+}
+
+.aside hr {
+    border: none;
+    background: #c4c4c4;
+    height: 1px;
+    margin: 0.5rem 0;
+}
+
+
+@media screen and (max-width: 1200px){
+    .main {
+        width: 100%;
+    }
+    .aside {
+        width: 100%;
+    }
+    .article {
+        max-width: 100%;
+        margin: 8vh 2vw;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .article {
+        display: initial;
+    }
+    
+    .article-img {
+        display: block;
+        text-align: center
+    }
+
+    .article-date, .article-title, .container-article p {
+        text-align: center
+    }
+}
+
+@media screen and (max-width: 600px){
+    .topbar {
+        position: absolute;
+    }
+    .social, .topbar nav {
+        display: block;
+        float: none;
+        text-align: center;
+    }
+    .social {
+       margin-top: 2vh;
+    }
+}
