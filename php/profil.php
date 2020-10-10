@@ -48,8 +48,8 @@ date_default_timezone_set('Europe/Paris');
             echo "<h3>Vous êtes connectés en tant que " . $_SESSION['nom'] . "</h3>";
             if (isset($_SESSION['admin'])) {
                 echo "<b>Vous disposez de droits administrateurs</b>";
-                echo "<p><a href='./init/initdbfilm.php'>Réinitialiser la table films</a></p>";
-                echo "<p><a href='./init/initdbaccount.php'>Réinitialiser la table account</a></p>";
+                echo "<div><a href='../init/initdbfilm.php'><button>Actualiser la liste des films</button></a></div>";
+                echo "<div><a href='../init/initdbaccount.php'><button>Réinitialiser la table account</button></a></div>";
             }
             echo "<p>Heure de la dernière connexion : Le " . date("d-m-Y à H:i", $_SESSION['time']) . "</p>";
         }
@@ -61,7 +61,7 @@ date_default_timezone_set('Europe/Paris');
 
         <div class="footer-left">
 
-            <h3>Bl<span>og</span></h3>
+            <h3>KX<span>Streaming</span></h3>
 
             <p class="footer-links">
                 <a href="../index.php" class="link-1">Accueil</a>

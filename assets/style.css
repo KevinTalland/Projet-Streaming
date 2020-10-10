@@ -9,7 +9,31 @@ body, html {
     line-height: 1.6;
     margin: 0;
     font-weight: 500;
+    box-sizing: border-box;
     background: #fbfbfb;
+    min-height: 100vh;
+}
+
+button {
+    padding: 0.3em 0.7em;
+    border-radius: 0.5em;;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #333;
+    color: #fff;
+}
+
+button:hover{
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: rgb(231, 58, 39);
 }
 
 .affiche {
@@ -21,26 +45,84 @@ section {
     background: #FFF;
     float:left;
     height: auto;
-    width: 70%;
+    width: 75%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 2;
     display: flex;
+    flex-wrap: wrap;
 }
 
 section div.article {
-    flex: 1 1 20%;
+    flex-basis: 25%;
 }
 
-div.article .affiche {
+section div.article a {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+section div.article .affiche {
     margin: 1em auto;
 }
 
-div.article {
+section div.article span {
+    margin: 0 auto;
+    width: 80%;
+}
+
+section div.article {
     text-align: center;
     display:flex;
     flex-direction: column;
 }
+
+section div.article:hover {
+    transform: scale(1.2);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+section.generate {
+    width: 100%;
+    margin: 5vh 0;
+    text-align: center;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    padding: 3em;
+}
+
+section.generate h1 {
+    margin-bottom: 10vh;
+}
+
+section.generate>div>div:last-child{
+    display: flex;
+    flex-direction: column;
+    background: rgba(128, 128, 128, 0.719);
+    border-radius: 2em;
+    padding: 1em 2em;
+}
+
+
+section.generate>div>div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+section.generate .img_film_generate {
+    margin: 2em;
+}
+
+section.generate .img_film_generate img{
+    width: 200px;
+    height: auto;
+}
+
 
 .topbar {
     position: fixed;
@@ -146,7 +228,7 @@ div.article {
     background: #fbfbfb;
     float:right;
     height: auto;;
-    width: 30%;
+    width: 25%;
     padding: 3vw;
     z-index: 1;
     position: relative;

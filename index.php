@@ -1,6 +1,7 @@
 <?php
 session_start();
 date_default_timezone_set('Europe/Paris');
+require_once("./php/generate.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -50,11 +51,19 @@ date_default_timezone_set('Europe/Paris');
 
             $result = $file_db->query('SELECT * from films');
             foreach ($result as $r) {
+                $format = str_replace(" ","", $r["titreFilm"]);
+                $format = str_replace(":","", $format);
+                $format = str_replace("'","", $format);
+                $format = str_replace("-","", $format);
+                $format = str_replace("é","e", $format);
+                $format = str_replace("à","a",$format);
               echo
                 "<div class='article'>
-                <img class='affiche' src='" . $r["afficheFilm"] . "' alt='affiche de" . $r["titreFilm"] . "'/> "
+                <a href='./php/pages/" . $format . ".php'>
+                <img class='affiche' src='" . $r["afficheFilm"] . "' alt='affiche de" . $r["titreFilm"] . "'/><span> "
                  . $r["titreFilm"] .
-              "</div>";
+              "</span></a></div>";
+              createPage($format, $r);
             }
 
             $file_db = null;
@@ -87,7 +96,7 @@ date_default_timezone_set('Europe/Paris');
 
         <div class="footer-left">
 
-            <h3>Bl<span>og</span></h3>
+            <h3>KX<span>Streaming</span></h3>
 
             <p class="footer-links">
                 <a href="#" class="link-1">Accueil</a>
