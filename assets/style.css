@@ -61,6 +61,8 @@ section div.article a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    text-decoration: none;
+    color: inherit;
 }
 
 section div.article .affiche {

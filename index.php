@@ -2,6 +2,7 @@
 session_start();
 date_default_timezone_set('Europe/Paris');
 require_once("./php/generate.php");
+require_once("./php/tri/triFunction.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -49,7 +50,8 @@ require_once("./php/generate.php");
             $file_db = new PDO('sqlite:./tmp/films.sqlite');
             $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-            $result = $file_db->query('SELECT * from films');
+            $result = tri($file_db);
+            
             foreach ($result as $r) {
                 $format = str_replace(" ","", $r["titreFilm"]);
                 $format = str_replace(":","", $format);
@@ -76,16 +78,16 @@ require_once("./php/generate.php");
     <aside class="aside">
         <h4 class="sidebar-title">Trier par :</h4>
         <ul>
-            <a href="#">
+            <a href="./php/tri/tridate.php">
                 <li>Date</li>
             </a>
-            <a href="#">
+            <a href="./php/tri/triAZ.php">
                 <li>Nom (A-Z)</li>
             </a>
-            <a href="#">
+            <a href="./php/tri/triZA.php">
                 <li>Nom (Z-A)</li>
             </a>
-            <a href="#">
+            <a href="./php/tri/triGenre.php">
                 <li>Genre</li>
             </a>
         </ul>
