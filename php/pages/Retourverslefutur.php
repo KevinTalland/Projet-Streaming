@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://fr.web.img2.acsta.net/medias/nmedia/18/35/91/26/18686482.jpg' alt='affiche Retour vers le futur'>
+                    <img src='https://fr.web.img2.acsta.net/medias/nmedia/18/35/91/26/18686482.jpg' alt='affiche de Retour vers le futur'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Zemeckis Robert</p>

@@ -17,6 +17,7 @@ require_once("./php/tri/triFunction.php");
 </head>
 
 <body>
+    
     <header class="topbar">
         <nav>
             <a href="#">Accueil</a>
@@ -26,6 +27,7 @@ require_once("./php/tri/triFunction.php");
         </nav>
         <div class="social">
             <?php
+            
             if (isset($_SESSION['nom'])) {
                 echo "<a href='./php/login/login.php'>
                     <Button>
@@ -62,7 +64,7 @@ require_once("./php/tri/triFunction.php");
               echo
                 "<div class='article'>
                 <a href='./php/pages/" . $format . ".php'>
-                <img class='affiche' src='" . $r["afficheFilm"] . "' alt='affiche de" . $r["titreFilm"] . "'/><span> "
+                <img class='affiche' src='" . $r["afficheFilm"] . "' alt='affiche de " . $r["titreFilm"] . "'/><span> "
                  . $r["titreFilm"] .
               "</span></a></div>";
               createPage($format, $r);
@@ -127,8 +129,8 @@ require_once("./php/tri/triFunction.php");
 
             <div>
                 <i></i>
-                <p><a href="mailto:support@company.com">kevin.talland@etu.univ-orleans.fr</a></p>
-                <p><a href="mailto:support@company.com">xavier.lemaire@etu.univ-orleans.fr</a></p>
+                <p><a href="mailto:kevin.talland@etu.univ-orleans.fr">kevin.talland@etu.univ-orleans.fr</a></p>
+                <p><a href="mailto:xavier.lemaire@etu.univ-orleans.fr">xavier.lemaire@etu.univ-orleans.fr</a></p>
             </div>
 
         </div>

@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://i1.wp.com/www.filmspourenfants.net/wp-content/uploads/2018/07/retour-vers-le-futur-2-a.jpg?fit=555%2C797&ssl=1' alt='affiche Retour vers le futur 2'>
+                    <img src='https://i1.wp.com/www.filmspourenfants.net/wp-content/uploads/2018/07/retour-vers-le-futur-2-a.jpg?fit=555%2C797&ssl=1' alt='affiche de Retour vers le futur 2'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Robert Zemeckis</p>

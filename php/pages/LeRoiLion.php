@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://i1.wp.com/www.filmspourenfants.net/wp-content/uploads/2018/06/le-roi-lion-a.jpg?fit=373%2C499&ssl=1' alt='affiche Le Roi Lion'>
+                    <img src='https://i1.wp.com/www.filmspourenfants.net/wp-content/uploads/2018/06/le-roi-lion-a.jpg?fit=373%2C499&ssl=1' alt='affiche de Le Roi Lion'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Roger Allers</p>

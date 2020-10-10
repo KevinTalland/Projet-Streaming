@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://i.pinimg.com/736x/63/85/bd/6385bdfd1630be0e114b22f680fa5e0c.jpg' alt='affiche Jurassic Park'>
+                    <img src='https://i.pinimg.com/736x/63/85/bd/6385bdfd1630be0e114b22f680fa5e0c.jpg' alt='affiche de Jurassic Park'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Steven Spielberg</p>

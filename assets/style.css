@@ -16,7 +16,7 @@ body, html {
 
 button {
     padding: 0.3em 0.7em;
-    border-radius: 0.5em;;
+    border-radius: 0.5em;
     border: none;
     font-size: inherit;
     color: inherit;
@@ -125,6 +125,35 @@ section.generate .img_film_generate img{
     height: auto;
 }
 
+.film_add, .film_suppr {
+    background-color: lightgray;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 5vh auto;
+    align-items: center;
+    text-align: center;
+}
+
+.film_add, .film_suppr>* {
+    padding:1em;
+}
+
+.film_add div {
+    align-self: center;
+}
+
+legend {
+    background-color: gray;
+    padding: 1em;
+    border-radius:1em;
+    margin: 0 auto;
+}
+
+.film_add div {
+    margin: 10vh auto;
+}
 
 .topbar {
     position: fixed;

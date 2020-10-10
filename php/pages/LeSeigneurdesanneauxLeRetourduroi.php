@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://fr.web.img3.acsta.net/medias/nmedia/18/35/14/33/18366630.jpg' alt='affiche Le Seigneur des anneaux : Le Retour du roi'>
+                    <img src='https://fr.web.img3.acsta.net/medias/nmedia/18/35/14/33/18366630.jpg' alt='affiche de Le Seigneur des anneaux : Le Retour du roi'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Peter Jackson</p>

@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://fr.web.img4.acsta.net/medias/nmedia/00/02/44/28/empire.jpg' alt='affiche L'empire contre-attaque'>
+                    <img src='https://fr.web.img4.acsta.net/medias/nmedia/00/02/44/28/empire.jpg' alt='affiche de L'empire contre-attaque'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Irvin Kershner</p>

@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://musicimage.xboxlive.com/catalog/video.movie.8D6KGX05V2LQ/image?locale=fr-fr&mode=crop&purposes=BoxArt&q=90&h=225&w=150&format=jpg' alt='affiche Le Seigneur des Anneaux : La communauté de l'anneau'>
+                    <img src='https://musicimage.xboxlive.com/catalog/video.movie.8D6KGX05V2LQ/image?locale=fr-fr&mode=crop&purposes=BoxArt&q=90&h=225&w=150&format=jpg' alt='affiche de Le Seigneur des Anneaux : La communauté de l'anneau'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : George Lucas</p>

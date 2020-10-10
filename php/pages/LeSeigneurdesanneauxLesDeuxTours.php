@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://fr.web.img6.acsta.net/medias/nmedia/00/02/54/95/affiche2.jpg' alt='affiche Le Seigneur des anneaux : Les Deux Tours'>
+                    <img src='https://fr.web.img6.acsta.net/medias/nmedia/00/02/54/95/affiche2.jpg' alt='affiche de Le Seigneur des anneaux : Les Deux Tours'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Peter Jackson</p>

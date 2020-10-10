@@ -54,7 +54,7 @@ function createPage($titrePage, $data)
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='" . $data['afficheFilm'] . "' alt='affiche " . $data['titreFilm'] . "'>
+                    <img src='" . $data['afficheFilm'] . "' alt='affiche de " . $data['titreFilm'] . "'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : " . $data['nomCreateur'] . "</p>

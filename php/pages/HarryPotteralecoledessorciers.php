@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://musicimage.xboxlive.com/catalog/video.movie.8D6KGWZL5XQS/image?locale=fr-fr&mode=crop&purposes=BoxArt&q=90&h=225&w=150&format=jpg' alt='affiche Harry Potter à l'école des sorciers'>
+                    <img src='https://musicimage.xboxlive.com/catalog/video.movie.8D6KGWZL5XQS/image?locale=fr-fr&mode=crop&purposes=BoxArt&q=90&h=225&w=150&format=jpg' alt='affiche de Harry Potter à l'école des sorciers'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Chris Columbus</p>

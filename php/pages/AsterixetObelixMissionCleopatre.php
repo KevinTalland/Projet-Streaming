@@ -45,7 +45,7 @@
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://fr.web.img3.acsta.net/medias/nmedia/00/02/39/29/aff_asterix.jpg' alt='affiche Asterix et Obelix : Mission Cleopatre'>
+                    <img src='https://fr.web.img3.acsta.net/medias/nmedia/00/02/39/29/aff_asterix.jpg' alt='affiche de Asterix et Obelix : Mission Cleopatre'>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Alain Chabat</p>

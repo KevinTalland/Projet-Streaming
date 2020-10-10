@@ -5,7 +5,7 @@
     //Si les informations du formulaire ont correctement été récupérées on tente la connexion à la BD
     if (isset($_POST['loginNom'])){
         $nom = htmlentities($_POST['loginNom']);
-        $password = htmlentities($_POST['loginPassword']);
+        $password = md5(htmlentities($_POST['loginPassword']));
         $time = strtotime(date("Y-m-d H:i:s"));
     }
        
@@ -25,12 +25,12 @@
         if (isset($nom)){
             //Si le nom n'est pas répertorié dans la BD, on l'y insère
             if (!in_array($nom, $listeUsers)){
-                $insert = 'INSERT INTO account (nomAcc, passwordAcc, timeAcc) VALUES (:nom, :password, :time)';
+                $insert = 'INSERT INTO account (nomAcc, passwordAcc, timeAcc, administrateur) VALUES (:nom, :password, :time, 0)';
                 $stmt = $file_db->prepare($insert);
-                $stmt->error_log;
+                $stmt->error_reporting;
     
                 $stmt->bindParam(":nom",$nom,PDO::PARAM_STR);
-                $stmt->bindParam(":password",md5($password),PDO::PARAM_STR);
+                $stmt->bindParam(":password",$password);
                 $stmt->bindParam(":time",$time,PDO::PARAM_INT);
                 $stmt->execute();
                 header("Location:../../index.php");
@@ -44,7 +44,7 @@
                 $res = $stmt->fetchColumn();
 
                 //Si le mdp saisi est correct, on autorise la connexion
-                if ($res == md5($password)){
+                if ($res == $password){
                     $update = 'UPDATE account SET timeAcc=:time where nomAcc=:nom';
                     $stmt = $file_db->prepare($update);
                     $stmt->bindParam(":nom",$nom, PDO::PARAM_STR);

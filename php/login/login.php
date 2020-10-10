@@ -1,5 +1,6 @@
-<?php 
-    session_unset();
+<?php
+    session_start();
+    session_destroy();
     session_start();
 ?>
 

@@ -8,7 +8,7 @@
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>LaGuerredesEtoiles</title>
+        <title>Matrix</title>
         <link rel='stylesheet' href='../../assets/style.css'>
         <link href='https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap' rel='stylesheet'>
         <link rel='stylesheet' href='../../assets/footer.css'>
@@ -41,22 +41,22 @@
     
         <div class='banniere'></div>'
 
-        <section class='generate'><h1>La Guerre des Etoiles</h1>
+        <section class='generate'><h1>Matrix</h1>
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://fr.web.img6.acsta.net/medias/nmedia/18/35/41/59/18422600.jpg' alt='affiche de La Guerre des Etoiles'>
+                    <img src='https://fr.web.img6.acsta.net/medias/04/34/49/043449_af.jpg' alt='affiche Matrix'>
                 </div>
                 <div class='details_container'>
-                    <p>Réalisateur : George Lucas</p>
-                    <p>Date de sortie : 25/05/1977</p>
+                    <p>Réalisateur : Lilly Wachowski</p>
+                    <p>Date de sortie : 01/01/1970</p>
                     <p>Genre : Science-fiction</p>
-                    <p>Durée :  2h01</p>
+                    <p>Durée :  2h16</p>
                 </div>
             </div>
             <div>
                 <h4>Synopsis</h4>
-                <p>Dans une galaxie lointaine, l'univers est dominé par l'Empire galactique avec à sa tête le sombre et impitoyable Dark Vador. Mais la révolte gronde, l'Alliance rebelle menée par la princesse Leia, s'empare des plans de l'Etoile Noire, la base secrète de l'Empire. Avant d'être capturée par les forces impériales, la jeune princesse dissimule les plans de l'Etoile Noire à son droïde R2-D2 avec pour mission de les remettre au Jedi Obi-Wan Kenobi. Accompagné de son fidèle compagnon, le droïde de protocole C-3PO, les deux robots s'échouent sur la planète Tatooine et terminent leur quête chez le jeune Luke Skywalker. Rêvant de devenir pilote, ce dernier se lance à la recherche de ce mystérieux Obi-Wan Kenobi, devenu ermite au coeur des montagnes désertiques de Tatooine...</p>
+                <p>Neo, un des pirates les plus recherchés du cyber-espace, reçoit de mystérieux messages cryptés d'un certain Morpheus. Celui-ci l'exhorte à aller au-delà des apparences et à trouver la réponse à la question qui hante constamment ses pensées : qu'est-ce que la Matrice ?</p>
             </div>
         </section>
 

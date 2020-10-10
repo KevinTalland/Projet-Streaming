@@ -18,13 +18,13 @@ try {
   $insert = "INSERT INTO films (titreFilm, nomCreateur, anneeFilm, genreFilm, descriptionFilm, afficheFilm, dureeFilm)
     VALUES (:titreFilm, :nomCreateur , :anneeFilm, :genreFilm, :descriptionFilm, :afficheFilm, :dureeFilm)";
   $stmt = $file_db->prepare($insert);
-  $stmt->bindParam(':titreFilm', $titre);
-  $stmt->bindParam(':nomCreateur', $createur);
-  $stmt->bindParam(':anneeFilm', $annee);
-  $stmt->bindParam(':genreFilm', $genre);
-  $stmt->bindParam(':descriptionFilm', $description);
-  $stmt->bindParam(':afficheFilm', $affiche);
-  $stmt->bindParam(":dureeFilm", $duree);
+  $stmt->bindParam(':titreFilm', $titre, PDO::PARAM_STR);
+  $stmt->bindParam(':nomCreateur', $createur,PDO::PARAM_STR);
+  $stmt->bindParam(':anneeFilm', $annee,PDO::PARAM_INT);
+  $stmt->bindParam(':genreFilm', $genre,PDO::PARAM_STR);
+  $stmt->bindParam(':descriptionFilm', $description,PDO::PARAM_STR);
+  $stmt->bindParam(':afficheFilm', $affiche,PDO::PARAM_STR);
+  $stmt->bindParam(":dureeFilm", $duree,PDO::PARAM_INT);
 
   foreach ($films as $f) {
     $titre = $f['titreFilm'];
