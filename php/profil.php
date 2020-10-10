@@ -20,9 +20,10 @@ date_default_timezone_set('Europe/Paris');
             <a href="../index.php">Accueil</a>
             <a href="#">Lien 1</a>
             <a href="#">Lien 2</a>
-            <a href="#">Mon profil</a>
+
         </nav>
         <div class="social">
+            <a href="#">Profil</a>
             <?php
             if (isset($_SESSION['nom'])) {
                 echo "<a href='./login/login.php'>
@@ -42,7 +43,7 @@ date_default_timezone_set('Europe/Paris');
     <div class="banniere"></div>
 
     <main class="main">
-        
+
 
         <?php
         if (isset($_SESSION['nom'])) {
@@ -113,50 +114,47 @@ date_default_timezone_set('Europe/Paris');
 
     </main>
 
-    <footer class="footer-distributed footer">
+    <footer class='footer'>
 
-        <div class="footer-left">
+        <div class='footer-left'>
 
             <h3>KX<span>Streaming</span></h3>
 
-            <p class="footer-links">
+            <p class='footer-links'>
                 <a href="../index.php" class="link-1">Accueil</a>
 
                 <a href="#">Lien 1</a>
 
                 <a href="#">Lien 2</a>
 
-                <a href="#">Mon profil</a>
+                <a href="#">Profil</a>
             </p>
 
-            <p class="footer-company-name">Talland Kevin - Lemaire Xavier © 2020</p>
+            <p class='footer-name'>Talland Kevin - Lemaire Xavier © 2020</p>
         </div>
 
-        <div class="footer-center">
+        <div class='footer-center'>
 
             <div>
-                <i class="fa fa-map-marker"></i>
                 <p><span>16 rue d'Issoudun</span> 45160, Olivet, France</p>
             </div>
 
             <div>
-                <i class="fa fa-phone"></i>
                 <p>06 77 16 87 63</p>
             </div>
 
             <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">kevin.talland@etu.univ-orleans.fr</a></p>
-                <p><a href="mailto:support@company.com">xavier.lemaire@etu.univ-orleans.fr</a></p>
+                <p><a href='mailto:kevin.talland@etu.univ-orleans.fr'>kevin.talland@etu.univ-orleans.fr</a></p>
+                <p><a href='mailto:xavier.lemaire@etu.univ-orleans.fr'>xavier.lemaire@etu.univ-orleans.fr</a></p>
             </div>
 
         </div>
 
-        <div class="footer-right">
+        <div class='footer-right'>
 
-            <p class="footer-company-about">
+            <p class='footer-about'>
                 <span>A propos de nous</span>
-                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                Nous sommes deux étudiants en IUT Informatique répondant à la demande d'un projet web visant à élaborer une plateforme de streaming en PHP.
             </p>
 
         </div>

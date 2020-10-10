@@ -9,16 +9,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login to KXStreaming</title>
+    <link rel="stylesheet" href="../../assets/login.css">
 </head>
 <body>
     <section>
         <form action="./verifLogin.php" method="post">
-            <label for="loginNom">Nom :</label>
-            <input type="text" name='loginNom' required>
-            <label for="loginPassword">Password :</label>
-            <input type="password" name="loginPassword" required>
-            <input type="submit">
+            <div>
+                <label for="loginNom">Nom :</label>
+                <input type="text" name='loginNom' required>
+            </div>
+            <div>
+                <label for="loginPassword">Password :</label>
+                <input type="password" name="loginPassword" required>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
         </form>
     </section>
 </body>

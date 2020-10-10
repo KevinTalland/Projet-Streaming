@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(0,0,0,0.87);
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+body {
+    background-image: url("./banner.jpg");
+    background: cover no-repeat;
+}
+
+section {
+    margin: 20vh auto;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius:1em;
+    width:30%;
+    text-align: center;
+    padding:2em;
+}
+
+section div {
+    padding:1em;
+}
+
+input[type=submit] {
+    padding: 0.3em 0.7em;
+    border-radius: 0.5em;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #333;
+    color: #fff;
+}
+
+input[type=submit]:hover{
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: rgb(231, 58, 39);
+}

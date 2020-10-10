@@ -27,9 +27,10 @@ function createPage($titrePage, $data)
                 <a href='../../index.php'>Accueil</a>
                 <a href='#'>Lien 1</a>
                 <a href='#'>Lien 2</a>
-                <a href='../profil.php'>Mon profil</a>
+                
             </nav>
             <div class='social'>
+            <a href='../profil.php'>Profil</a>
                 <?php
                 if (isset($" . "_SESSION[" . "'nom'" . "])) {
                     echo \"<a href='../login/login.php'>
@@ -69,7 +70,7 @@ function createPage($titrePage, $data)
             </div>
         </section>
 
-        <footer class='footer-distributed footer'>
+        <footer class='footer'>
 
         <div class='footer-left'>
 
@@ -82,47 +83,44 @@ function createPage($titrePage, $data)
 
                 <a href='#'>Lien 2</a>
 
-                <a href='../profil.php'>Mon profil</a>
-            </p>
+                <a href='../profil.php'>Profil</a>
+                </p>
 
-            <p class='footer-company-name'>Talland Kevin - Lemaire Xavier © 2020</p>
-        </div>
-
-        <div class='footer-center'>
-
-            <div>
-                <i></i>
-                <p><span>16 rue d'Issoudun</span> 45160, Olivet, France</p>
+                <p class='footer-name'>Talland Kevin - Lemaire Xavier © 2020</p>
             </div>
-
-            <div>
-                <i></i>
-                <p>06 77 16 87 63</p>
+    
+            <div class='footer-center'>
+    
+                <div>
+                    <p><span>16 rue d'Issoudun</span> 45160, Olivet, France</p>
+                </div>
+    
+                <div>
+                    <p>06 77 16 87 63</p>
+                </div>
+    
+                <div>
+                    <p><a href='mailto:kevin.talland@etu.univ-orleans.fr'>kevin.talland@etu.univ-orleans.fr</a></p>
+                    <p><a href='mailto:xavier.lemaire@etu.univ-orleans.fr'>xavier.lemaire@etu.univ-orleans.fr</a></p>
+                </div>
+    
             </div>
-
-            <div>
-                <i></i>
-                <p><a href='mailto:support@company.com'>kevin.talland@etu.univ-orleans.fr</a></p>
-                <p><a href='mailto:support@company.com'>xavier.lemaire@etu.univ-orleans.fr</a></p>
+    
+            <div class='footer-right'>
+    
+                <p class='footer-about'>
+                    <span>A propos de nous</span>
+                    Nous sommes deux étudiants en IUT Informatique répondant à la demande d'un projet web visant à élaborer une plateforme de streaming en PHP.
+                </p>
+    
             </div>
-
-        </div>
-
-        <div class='footer-right'>
-
-            <p class='footer-company-about'>
-                <span>A propos de nous</span>
-                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-            </p>
-
-        </div>
-
-    </footer>
-
-
-</body>
-
-</html>";
+    
+        </footer>
+    
+    
+    </body>
+    
+    </html>";
 
 $titrePage .=".php";
 $path="./php/pages/";
