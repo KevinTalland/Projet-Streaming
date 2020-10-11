@@ -8,7 +8,7 @@
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-        <title>LaGuerredesEtoiles</title>
+        <title>a</title>
         <link rel='stylesheet' href='../../assets/style.css'>
         <link href='https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap' rel='stylesheet'>
         <link rel='stylesheet' href='../../assets/footer.css'>
@@ -59,34 +59,34 @@
                 <button>Modifier</button>
             </a>
                 <?php } ?>
-            <h1>La Guerre des Etoiles</h1>
+            <h1>a</h1>
             <?php if (isset($_SESSION['modif'])){
 
-                $_SESSION['titreFilm'] = "La Guerre des Etoiles";
+                $_SESSION['titreFilm'] = "a";
 
                 echo "<form action='../modification.php' method='post'><div><input type='text' name='titreFilm' placeholder='Modifier le titre'></div>";
             }?>
         <div>
             <div>
                 <div class='img_film_generate'>
-                    <img src='https://fr.web.img6.acsta.net/medias/nmedia/18/35/41/59/18422600.jpg' alt='affiche de La Guerre des Etoiles'>
+                    <img src='https://musicimage.xboxlive.com/catalog/video.movie.8D6KGWZL5XQS/image?locale=fr-fr&mode=crop&purposes=BoxArt&q=90&h=225&w=150&format=jpg' alt='affiche de a'>
                     <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='2' cols='50' name='afficheFilm' 
                         placeholder='Pour modifier cette affiche veuillez rentrer un lien valide vers un fichier image'></textarea></div>"; }?>
                 </div>
                 <div class='details_container'>
-                    <p>Réalisateur : George Lucas</p>
+                    <p>Réalisateur : Chris Columbus</p>
                     <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='nomCreateur' placeholder='Modifier le réalisateur'></div>"; }?>
-                    <p>Date de sortie : 25/05/1977</p>
+                    <p>Date de sortie : 16/11/2001</p>
                     <?php if (isset($_SESSION['modif'])){ echo "<div><input type='date' name='anneeFilm'></div>"; }?>
-                    <p>Genre : Science-fiction</p>
+                    <p>Genre : Fantastique</p>
                     <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='genreFilm' placeholder='Modifier le genre'></div>"; }?>
-                    <p>Durée :  2h01</p>
+                    <p>Durée :  0h05</p>
                     <?php if (isset($_SESSION['modif'])){ echo "<div><input type='number' name='dureeFilm' placeholder='Modifier la durée (minutes)'></div>"; }?>
                 </div>
             </div>
             <div>
                 <h4>Synopsis</h4>
-                <p>Dans une galaxie lointaine, l'univers est dominé par l'Empire galactique avec à sa tête le sombre et impitoyable Dark Vador. Mais la révolte gronde, l'Alliance rebelle menée par la princesse Leia, s'empare des plans de l'Etoile Noire, la base secrète de l'Empire. Avant d'être capturée par les forces impériales, la jeune princesse dissimule les plans de l'Etoile Noire à son droïde R2-D2 avec pour mission de les remettre au Jedi Obi-Wan Kenobi. Accompagné de son fidèle compagnon, le droïde de protocole C-3PO, les deux robots s'échouent sur la planète Tatooine et terminent leur quête chez le jeune Luke Skywalker. Rêvant de devenir pilote, ce dernier se lance à la recherche de ce mystérieux Obi-Wan Kenobi, devenu ermite au coeur des montagnes désertiques de Tatooine...</p>
+                <p>Orphelin, Harry Potter est élevé par son oncle et sa tante qui l'obligent à vivre dans un placard. Ces derniers, lui cachent qu'il est en fait fils de sorciers et que sa place est à Poudlard, la prestigieuse école de magie. Le jour de ses 11 ans, un géant nommé Hagrid lui révèle enfin la vérité. Après s'être équipé comme il se doit, Harry fait sa rentrée à Poudlard et débute très vite une nouvelle vie.</p>
                 <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='4' cols='100' name='descriptionFilm' placeholder='Modifier le synopsis'></textarea></div>"; }?>
             </div>
             <?php if (isset($_SESSION['modif'])){ ?>

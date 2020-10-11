@@ -13,6 +13,7 @@
         <link href='https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap' rel='stylesheet'>
         <link rel='stylesheet' href='../../assets/footer.css'>
         <link rel='stylesheet' href='../../assets/generate.css'>
+        <link rel='stylesheet' href='../../assets/nav.css'>
     </head>
     
     <body>
@@ -21,8 +22,13 @@
                 <a href='../../index.php'>Accueil</a>
                 <a href='#'>Lien 1</a>
                 <a href='#'>Lien 2</a>
-                
             </nav>
+            <div class='searchBar'>
+            <form action='./tri/searchFilm.php' method='post'>
+                <input type='search' name='search' placeholder='Rechercher un film'>
+                <button type='submit'>Search</button>
+            </form>
+            </div>
             <div class='social'>
             
                 <?php

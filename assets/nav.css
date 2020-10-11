@@ -1,0 +1,72 @@
+.topbar {
+    position: fixed;
+    background: #FFF;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 4vh 2vw;
+    z-index: 99;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.topbar .searchBar input[type=search] {
+    outline: none;
+    background: var(--color-light);
+    padding: .2em 1.6rem;
+    border-radius: 1em 0 0 1em;
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius;
+}
+
+.topbar .searchBar>form {
+    display: flex;
+}
+
+.searchBar button {
+    display: none;
+    font-weight: inherit;
+    padding: .4em .8em;
+    border-radius: 0 1em 1em 0;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: rgb(16, 170, 29);
+    color: #fff;
+}
+
+.searchBar input:not(:placeholder-shown)+button {
+    display: block;
+}
+
+.topbar nav a {
+    color: #9F9F9F;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0 4vw;
+}
+
+.topbar nav a:hover,
+.topbar nav a.active {
+    color: #000000;
+    transition: color .3s;
+}
+
+.social a {
+    padding: 2vw;
+    opacity: .5;
+    text-decoration: none;
+    color: inherit;
+}
+
+.social a:hover {
+    opacity: 1;
+    transition: opacity .3s;
+}
