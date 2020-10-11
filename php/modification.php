@@ -1,6 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Paris');
 session_start();
+require_once('./function.php');
 
 if (isset($_POST['annuler'])) {
     unset($_SESSION['modif']);
@@ -11,7 +12,6 @@ try {
     $file_db = new PDO('sqlite:../tmp/films.sqlite');
     $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-    $modifications = array();
     $update = "UPDATE films SET "; //UPDATE films SET $cle='$valeur' where titreFilm = SESSION['titreFilm']
 
     foreach ($_POST as $cle => $valeur) {
@@ -34,9 +34,24 @@ try {
 
     $update .= ' where titreFilm="' . $_SESSION['titreFilm'] . '"';
 
-    var_dump($update);
+    $titreReq = 'SELECT titreFilm FROM films WHERE titreFilm="'.$_SESSION['titreFilm'].'"';
+    $titre1 = $file_db->query($titreReq);
+    $titreAvant = $titre1->fetchColumn();
 
     $stmt = $file_db->exec($update);
+
+    //titreApres est recherché en fonction de l'ancien titre pour voir si il a changé
+    $titreReq = 'SELECT titreFilm FROM films WHERE titreFilm="'.$titreAvant.'"';
+    $titre2 = $file_db->query($titreReq);
+    $titreApres = $titre2->fetchColumn();
+
+    //si le titre a changé, on efface l'ancien fichier php
+    if ($titreAvant != $titreApres){
+        $nom = getTitleFormat($titreAvant);
+        $titrePage = $nom.".php";
+        $path="./pages/";
+        unlink($path.$titrePage);
+    }
 
     $file_db = null;
 } catch (PDOException $ex) {

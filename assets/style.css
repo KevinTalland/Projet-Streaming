@@ -2,10 +2,11 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
-    color: rgba(0,0,0,0.87);
+    color: rgba(0, 0, 0, 0.87);
     line-height: 1.6;
     margin: 0;
     font-weight: 500;
@@ -28,7 +29,7 @@ button {
     color: #fff;
 }
 
-button:hover{
+button:hover {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -42,7 +43,7 @@ button:hover{
 
 section {
     background: #FFF;
-    float:left;
+    float: left;
     height: auto;
     width: 75%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
@@ -75,7 +76,7 @@ section div.article span {
 
 section div.article {
     text-align: center;
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -85,7 +86,8 @@ section div.article:hover {
     cursor: pointer;
 }
 
-.film_add, .film_suppr {
+.film_add,
+.film_suppr {
     background-color: lightgray;
     border-radius: 2em;
     display: flex;
@@ -96,8 +98,9 @@ section div.article:hover {
     text-align: center;
 }
 
-.film_add, .film_suppr>* {
-    padding:1em;
+.film_add,
+.film_suppr>* {
+    padding: 1em;
 }
 
 .film_add div {
@@ -107,7 +110,7 @@ section div.article:hover {
 legend {
     background-color: gray;
     padding: 1em;
-    border-radius:1em;
+    border-radius: 1em;
     margin: 0 auto;
 }
 
@@ -118,7 +121,7 @@ legend {
 .topbar {
     position: fixed;
     background: #FFF;
-    top:0;
+    top: 0;
     left: 0;
     right: 0;
     padding: 3vh 2vw;
@@ -137,7 +140,8 @@ legend {
     padding: 0 4vw;
 }
 
-.topbar nav a:hover, .topbar nav a.active {
+.topbar nav a:hover,
+.topbar nav a.active {
     color: #000000;
     transition: color .3s;
 }
@@ -160,7 +164,7 @@ legend {
 
 .banniere {
     font-size: 50px;
-    height: 65vh;
+    height: 50vh;
     background: url("banner.jpg");
     background-position: center center;
     background-size: cover;
@@ -179,7 +183,7 @@ legend {
 
 .article {
     overflow: hidden;
-    display:flex;
+    display: flex;
     margin: 6vh auto;
     flex-direction: row;
     max-width: 60vw;
@@ -190,7 +194,7 @@ legend {
 }
 
 .container-article {
-    display:flex;
+    display: flex;
     flex-direction: column;
     flex: 0 1 60%;
 }
@@ -198,7 +202,8 @@ legend {
 .article-date {
     font-weight: 300px;
     color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 1em;;
+    margin-bottom: 1em;
+    ;
 }
 
 .article-title {
@@ -219,8 +224,9 @@ legend {
 
 .aside {
     background: #fbfbfb;
-    float:right;
-    height: auto;;
+    float: right;
+    height: auto;
+    ;
     width: 25%;
     padding: 3vw;
     z-index: 1;
@@ -230,7 +236,7 @@ legend {
 .aside ul {
     list-style-type: none;
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
 .aside li {
@@ -263,8 +269,7 @@ legend {
     margin: 0.5rem 0;
 }
 
-
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
     .main {
         width: 100%;
     }
@@ -281,27 +286,28 @@ legend {
     .article {
         display: initial;
     }
-    
     .article-img {
         display: block;
         text-align: center
     }
-
-    .article-date, .article-title, .container-article p {
+    .article-date,
+    .article-title,
+    .container-article p {
         text-align: center
     }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
     .topbar {
         position: absolute;
     }
-    .social, .topbar nav {
+    .social,
+    .topbar nav {
         display: block;
         float: none;
         text-align: center;
     }
     .social {
-       margin-top: 2vh;
+        margin-top: 2vh;
     }
 }

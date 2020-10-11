@@ -31,9 +31,10 @@ function createPage($titrePage, $data)
                 
             </nav>
             <div class='social'>
-            <a href='../profil.php'>Profil</a>
+            
                 <?php
                 if (isset($" . "_SESSION[" . "'nom'" . "])) {
+                    echo \"<a href='../profil.php'>Profil</a>\";
                     echo \"<a href='../login/login.php'>
                         <Button>
                             Déconnexion

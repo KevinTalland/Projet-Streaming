@@ -27,10 +27,11 @@ require_once("./php/function.php");
             
         </nav>
         <div class="social">
-            <a href="./php/profil.php">Profil</a>
+            
             <?php
             
             if (isset($_SESSION['nom'])) {
+                echo "<a href='./php/profil.php'>Profil</a>";
                 echo "<a href='./php/login/login.php'>
                     <Button>
                         Déconnexion
