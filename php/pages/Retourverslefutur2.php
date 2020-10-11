@@ -12,6 +12,7 @@
         <link rel='stylesheet' href='../../assets/style.css'>
         <link href='https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap' rel='stylesheet'>
         <link rel='stylesheet' href='../../assets/footer.css'>
+        <link rel='stylesheet' href='../../assets/generate.css'>
     </head>
     
     <body>
@@ -42,23 +43,52 @@
     
         <div class='banniere'></div>'
 
-        <section class='generate'><h1>Retour vers le futur 2</h1>
+        <section class='generate'>
+
+                <?php 
+                    if ($_SESSION['admin']==1 and !isset($_SESSION['modif'])){ 
+                ?>
+            <a href='../modifCall.php'>
+                <button>Modifier</button>
+            </a>
+                <?php } ?>
+            <h1>Retour vers le futur 2</h1>
+            <?php if (isset($_SESSION['modif'])){
+
+                $_SESSION['titreFilm'] = "Retour vers le futur 2";
+
+                echo "<form action='../modification.php' method='post'><div><input type='text' name='titreFilm' placeholder='Modifier le titre'></div>";
+            }?>
         <div>
             <div>
                 <div class='img_film_generate'>
                     <img src='https://i1.wp.com/www.filmspourenfants.net/wp-content/uploads/2018/07/retour-vers-le-futur-2-a.jpg?fit=555%2C797&ssl=1' alt='affiche de Retour vers le futur 2'>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='2' cols='50' name='afficheFilm' 
+                        placeholder='Pour modifier cette affiche veuillez rentrer un lien valide vers un fichier image'></textarea></div>"; }?>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Robert Zemeckis</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='nomCreateur' placeholder='Modifier le réalisateur'></div>"; }?>
                     <p>Date de sortie : 22/11/1989</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='date' name='anneeFilm'></div>"; }?>
                     <p>Genre : Science-fiction</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='genreFilm' placeholder='Modifier le genre'></div>"; }?>
                     <p>Durée :  1h48</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='number' name='dureeFilm' placeholder='Modifier la durée (minutes)'></div>"; }?>
                 </div>
             </div>
             <div>
                 <h4>Synopsis</h4>
                 <p>En 1985, Marty McFly a retrouvé sa famille et sa petite amie après un voyage mouvementé dans le passé. Surgit alors Doc Brown, au volant de sa machine à explorer le temps. Il lui enjoint de le suivre dans le futur, en l'an 2015, pour secourir son fils tombé sous la coupe du sinistre Biff Tannen.</p>
+                <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='4' cols='100' name='descriptionFilm' placeholder='Modifier le synopsis'></textarea></div>"; }?>
             </div>
+            <?php if (isset($_SESSION['modif'])){ ?>
+                <div class='submit-modif'>
+                    <input type='submit' value='Valider'>
+                    <input type='submit' value='Annuler' name='annuler'>
+                </div>
+                </form>
+            <?php } ?>
         </section>
 
         <footer class='footer'>
@@ -90,7 +120,7 @@
                     <p>06 77 16 87 63</p>
                 </div>
     
-                <div>
+                <div class='footer-contact'>
                     <p><a href='mailto:kevin.talland@etu.univ-orleans.fr'>kevin.talland@etu.univ-orleans.fr</a></p>
                     <p><a href='mailto:xavier.lemaire@etu.univ-orleans.fr'>xavier.lemaire@etu.univ-orleans.fr</a></p>
                 </div>

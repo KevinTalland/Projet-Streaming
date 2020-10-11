@@ -12,6 +12,7 @@
         <link rel='stylesheet' href='../../assets/style.css'>
         <link href='https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap' rel='stylesheet'>
         <link rel='stylesheet' href='../../assets/footer.css'>
+        <link rel='stylesheet' href='../../assets/generate.css'>
     </head>
     
     <body>
@@ -42,23 +43,52 @@
     
         <div class='banniere'></div>'
 
-        <section class='generate'><h1>Le Seigneur des anneaux : Les Deux Tours</h1>
+        <section class='generate'>
+
+                <?php 
+                    if ($_SESSION['admin']==1 and !isset($_SESSION['modif'])){ 
+                ?>
+            <a href='../modifCall.php'>
+                <button>Modifier</button>
+            </a>
+                <?php } ?>
+            <h1>Le Seigneur des anneaux : Les Deux Tours</h1>
+            <?php if (isset($_SESSION['modif'])){
+
+                $_SESSION['titreFilm'] = "Le Seigneur des anneaux : Les Deux Tours";
+
+                echo "<form action='../modification.php' method='post'><div><input type='text' name='titreFilm' placeholder='Modifier le titre'></div>";
+            }?>
         <div>
             <div>
                 <div class='img_film_generate'>
                     <img src='https://fr.web.img6.acsta.net/medias/nmedia/00/02/54/95/affiche2.jpg' alt='affiche de Le Seigneur des anneaux : Les Deux Tours'>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='2' cols='50' name='afficheFilm' 
+                        placeholder='Pour modifier cette affiche veuillez rentrer un lien valide vers un fichier image'></textarea></div>"; }?>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Peter Jackson</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='nomCreateur' placeholder='Modifier le réalisateur'></div>"; }?>
                     <p>Date de sortie : 18/12/2002</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='date' name='anneeFilm'></div>"; }?>
                     <p>Genre : Fantasy</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='genreFilm' placeholder='Modifier le genre'></div>"; }?>
                     <p>Durée :  2h58</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='number' name='dureeFilm' placeholder='Modifier la durée (minutes)'></div>"; }?>
                 </div>
             </div>
             <div>
                 <h4>Synopsis</h4>
                 <p>Frodon et Sam continuent leur voyage vers Mordor pour détruire l'anneau de Sauron. Aragorn, Gimli et Legolas partent pour sauver leurs amis hobbits.</p>
+                <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='4' cols='100' name='descriptionFilm' placeholder='Modifier le synopsis'></textarea></div>"; }?>
             </div>
+            <?php if (isset($_SESSION['modif'])){ ?>
+                <div class='submit-modif'>
+                    <input type='submit' value='Valider'>
+                    <input type='submit' value='Annuler' name='annuler'>
+                </div>
+                </form>
+            <?php } ?>
         </section>
 
         <footer class='footer'>
@@ -90,7 +120,7 @@
                     <p>06 77 16 87 63</p>
                 </div>
     
-                <div>
+                <div class='footer-contact'>
                     <p><a href='mailto:kevin.talland@etu.univ-orleans.fr'>kevin.talland@etu.univ-orleans.fr</a></p>
                     <p><a href='mailto:xavier.lemaire@etu.univ-orleans.fr'>xavier.lemaire@etu.univ-orleans.fr</a></p>
                 </div>

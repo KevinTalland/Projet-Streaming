@@ -12,6 +12,7 @@
         <link rel='stylesheet' href='../../assets/style.css'>
         <link href='https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap' rel='stylesheet'>
         <link rel='stylesheet' href='../../assets/footer.css'>
+        <link rel='stylesheet' href='../../assets/generate.css'>
     </head>
     
     <body>
@@ -42,23 +43,52 @@
     
         <div class='banniere'></div>'
 
-        <section class='generate'><h1>Harry Potter à l'école des sorciers</h1>
+        <section class='generate'>
+
+                <?php 
+                    if ($_SESSION['admin']==1 and !isset($_SESSION['modif'])){ 
+                ?>
+            <a href='../modifCall.php'>
+                <button>Modifier</button>
+            </a>
+                <?php } ?>
+            <h1>Harry Potter à l'école des sorciers</h1>
+            <?php if (isset($_SESSION['modif'])){
+
+                $_SESSION['titreFilm'] = "Harry Potter à l'école des sorciers";
+
+                echo "<form action='../modification.php' method='post'><div><input type='text' name='titreFilm' placeholder='Modifier le titre'></div>";
+            }?>
         <div>
             <div>
                 <div class='img_film_generate'>
                     <img src='https://musicimage.xboxlive.com/catalog/video.movie.8D6KGWZL5XQS/image?locale=fr-fr&mode=crop&purposes=BoxArt&q=90&h=225&w=150&format=jpg' alt='affiche de Harry Potter à l'école des sorciers'>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='2' cols='50' name='afficheFilm' 
+                        placeholder='Pour modifier cette affiche veuillez rentrer un lien valide vers un fichier image'></textarea></div>"; }?>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Chris Columbus</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='nomCreateur' placeholder='Modifier le réalisateur'></div>"; }?>
                     <p>Date de sortie : 16/11/2001</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='date' name='anneeFilm'></div>"; }?>
                     <p>Genre : Fantastique</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='genreFilm' placeholder='Modifier le genre'></div>"; }?>
                     <p>Durée :  2h32</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='number' name='dureeFilm' placeholder='Modifier la durée (minutes)'></div>"; }?>
                 </div>
             </div>
             <div>
                 <h4>Synopsis</h4>
                 <p>Orphelin, Harry Potter est élevé par son oncle et sa tante qui l'obligent à vivre dans un placard. Ces derniers, lui cachent qu'il est en fait fils de sorciers et que sa place est à Poudlard, la prestigieuse école de magie. Le jour de ses 11 ans, un géant nommé Hagrid lui révèle enfin la vérité. Après s'être équipé comme il se doit, Harry fait sa rentrée à Poudlard et débute très vite une nouvelle vie.</p>
+                <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='4' cols='100' name='descriptionFilm' placeholder='Modifier le synopsis'></textarea></div>"; }?>
             </div>
+            <?php if (isset($_SESSION['modif'])){ ?>
+                <div class='submit-modif'>
+                    <input type='submit' value='Valider'>
+                    <input type='submit' value='Annuler' name='annuler'>
+                </div>
+                </form>
+            <?php } ?>
         </section>
 
         <footer class='footer'>
@@ -90,7 +120,7 @@
                     <p>06 77 16 87 63</p>
                 </div>
     
-                <div>
+                <div class='footer-contact'>
                     <p><a href='mailto:kevin.talland@etu.univ-orleans.fr'>kevin.talland@etu.univ-orleans.fr</a></p>
                     <p><a href='mailto:xavier.lemaire@etu.univ-orleans.fr'>xavier.lemaire@etu.univ-orleans.fr</a></p>
                 </div>

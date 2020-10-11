@@ -3,6 +3,7 @@ session_start();
 date_default_timezone_set('Europe/Paris');
 require_once("./php/generate.php");
 require_once("./php/tri/triFunction.php");
+require_once("./php/function.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -56,12 +57,7 @@ require_once("./php/tri/triFunction.php");
             $result = tri($file_db);
             
             foreach ($result as $r) {
-                $format = str_replace(" ","", $r["titreFilm"]);
-                $format = str_replace(":","", $format);
-                $format = str_replace("'","", $format);
-                $format = str_replace("-","", $format);
-                $format = str_replace("é","e", $format);
-                $format = str_replace("à","a",$format);
+                $format = getTitleFormat($r['titreFilm']);
               echo
                 "<div class='article'>
                 <a href='./php/pages/" . $format . ".php'>

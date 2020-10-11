@@ -1,0 +1,115 @@
+section.generate {
+    width: 100%;
+    margin: 5vh 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 3em;
+}
+
+section.generate h1 {
+    margin-bottom: 5vh;
+}
+
+section.generate>div>div:last-child {
+    display: flex;
+    flex-direction: column;
+    background: rgba(148, 148, 148, 0.6);
+    border-radius: 2em;
+    padding: 1em 2em;
+}
+
+section.generate>div>div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+section.generate .img_film_generate {
+    margin: 2em;
+}
+
+section.generate .img_film_generate img {
+    width: 200px;
+    height: auto;
+}
+
+section.generate button {
+    float: right;
+}
+
+section.generate button {
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: rgb(16, 170, 29);
+    color: #fff;
+}
+
+section.generate button:hover {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transform: scale(.9);
+    transition: all 0.3s;
+    background: rgb(11, 122, 21);
+}
+
+section.generate input[type=text] {
+    width: 20vw;
+}
+
+section.generate .submit-modif {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+section.generate .submit-modif>* {
+    margin: 1em;
+}
+
+section.generate .submit-modif input[type=submit] {
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: none;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: #fff;
+}
+
+section.generate .submit-modif input[type=submit]:hover {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transform: scale(.9);
+    transition: all 0.3s;
+}
+
+section.generate .submit-modif input[type=submit]:first-child {
+    background: rgb(16, 170, 29);
+}
+
+section.generate .submit-modif input[type=submit]:last-child {
+    background: rgb(211, 19, 19)
+}
+
+section.generate .submit-modif input[type=submit]:first-child:hover {
+    background: rgb(11, 122, 21);
+}
+
+section.generate .submit-modif input[type=submit]:last-child:hover {
+    background: rgb(163, 14, 14);
+}

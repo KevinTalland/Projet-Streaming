@@ -143,7 +143,7 @@ date_default_timezone_set('Europe/Paris');
                 <p>06 77 16 87 63</p>
             </div>
 
-            <div>
+            <div class='footer-contact'>
                 <p><a href='mailto:kevin.talland@etu.univ-orleans.fr'>kevin.talland@etu.univ-orleans.fr</a></p>
                 <p><a href='mailto:xavier.lemaire@etu.univ-orleans.fr'>xavier.lemaire@etu.univ-orleans.fr</a></p>
             </div>

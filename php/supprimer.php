@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('./function.php');
 date_default_timezone_set('Europe/Paris');
 try {
     $file_db = new PDO('sqlite:../tmp/films.sqlite');
@@ -13,6 +14,12 @@ try {
     $stmt->execute();
 
     $file_db = null;
+
+    $nom = getTitleFormat($nom);
+    $titrePage = $nom.".php";
+    $path="./pages/";
+    unlink($path.$titrePage);
+    
     header("Location:../index.php");
 }
 catch (PDOException $ex) {

@@ -17,7 +17,7 @@ try {
 
     $titre = $_POST['titreFilm'];
     $createur = $_POST['nomCreateur'];
-    $annee = $_POST['anneeFilm'];
+    $annee = strtotime($_POST['anneeFilm']);
     $genre = $_POST['genreFilm'];
     $description = $_POST['descriptionFilm'];
     $affiche = $_POST['afficheFilm'];

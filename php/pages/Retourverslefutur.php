@@ -12,6 +12,7 @@
         <link rel='stylesheet' href='../../assets/style.css'>
         <link href='https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap' rel='stylesheet'>
         <link rel='stylesheet' href='../../assets/footer.css'>
+        <link rel='stylesheet' href='../../assets/generate.css'>
     </head>
     
     <body>
@@ -42,23 +43,52 @@
     
         <div class='banniere'></div>'
 
-        <section class='generate'><h1>Retour vers le futur</h1>
+        <section class='generate'>
+
+                <?php 
+                    if ($_SESSION['admin']==1 and !isset($_SESSION['modif'])){ 
+                ?>
+            <a href='../modifCall.php'>
+                <button>Modifier</button>
+            </a>
+                <?php } ?>
+            <h1>Retour vers le futur</h1>
+            <?php if (isset($_SESSION['modif'])){
+
+                $_SESSION['titreFilm'] = "Retour vers le futur";
+
+                echo "<form action='../modification.php' method='post'><div><input type='text' name='titreFilm' placeholder='Modifier le titre'></div>";
+            }?>
         <div>
             <div>
                 <div class='img_film_generate'>
                     <img src='https://fr.web.img2.acsta.net/medias/nmedia/18/35/91/26/18686482.jpg' alt='affiche de Retour vers le futur'>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='2' cols='50' name='afficheFilm' 
+                        placeholder='Pour modifier cette affiche veuillez rentrer un lien valide vers un fichier image'></textarea></div>"; }?>
                 </div>
                 <div class='details_container'>
                     <p>Réalisateur : Zemeckis Robert</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='nomCreateur' placeholder='Modifier le réalisateur'></div>"; }?>
                     <p>Date de sortie : 03/07/1985</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='date' name='anneeFilm'></div>"; }?>
                     <p>Genre : Science-fiction</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='text' name='genreFilm' placeholder='Modifier le genre'></div>"; }?>
                     <p>Durée :  1h56</p>
+                    <?php if (isset($_SESSION['modif'])){ echo "<div><input type='number' name='dureeFilm' placeholder='Modifier la durée (minutes)'></div>"; }?>
                 </div>
             </div>
             <div>
                 <h4>Synopsis</h4>
                 <p>En 1985, Marty, un adolescent comme les autres, mène une existence qu'il juge morne et ennuyeuse. Heureusement, il est épris de la jolie Jennifer et entretient une profonde amitié avec Doc, un savant fou qui prétend avoir inventé une machine à explorer le temps. Un jour, Doc invite Marty à l'essayer. Mais ils sont surpris par des terroristes. Doc est abattu tandis que Marty met l'engin en marche et se retrouve en 1955.</p>
+                <?php if (isset($_SESSION['modif'])){ echo "<div><textarea type='text' rows='4' cols='100' name='descriptionFilm' placeholder='Modifier le synopsis'></textarea></div>"; }?>
             </div>
+            <?php if (isset($_SESSION['modif'])){ ?>
+                <div class='submit-modif'>
+                    <input type='submit' value='Valider'>
+                    <input type='submit' value='Annuler' name='annuler'>
+                </div>
+                </form>
+            <?php } ?>
         </section>
 
         <footer class='footer'>
@@ -90,7 +120,7 @@
                     <p>06 77 16 87 63</p>
                 </div>
     
-                <div>
+                <div class='footer-contact'>
                     <p><a href='mailto:kevin.talland@etu.univ-orleans.fr'>kevin.talland@etu.univ-orleans.fr</a></p>
                     <p><a href='mailto:xavier.lemaire@etu.univ-orleans.fr'>xavier.lemaire@etu.univ-orleans.fr</a></p>
                 </div>
