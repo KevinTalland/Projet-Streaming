@@ -6,7 +6,7 @@ if (isset($_POST['titre'])){
     $titre = htmlentities($_POST['titre']);
     unset($_SESSION['modif']);
     try {
-        $file_db = new PDO('sqlite:../tmp/films.sqlite');
+        $file_db = new PDO('sqlite:../../tmp/films.sqlite');
         $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     
         $req = "DELETE from films where titreFilmURL=:nom";
@@ -17,11 +17,11 @@ if (isset($_POST['titre'])){
     
         $file_db = null;
 
-        header("Location:../index.php");
+        header("Location:../../index.php");
     }
     catch (PDOException $ex) {
         echo $ex->getMessage();
-        header("Location:./error.html");
+        header("Location:../error.html");
     }
 }
 

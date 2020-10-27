@@ -1,0 +1,21 @@
+@media (max-width: 900px) {
+    .admin-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .admin-buttons>div {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .film_add>form>div:first-child {
+        flex-direction: column;
+    }
+    .film_add>form textarea {
+        width: 100%;
+    }
+    .film_add {
+        width: 90vw;
+    }
+}

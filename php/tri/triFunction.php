@@ -1,11 +1,11 @@
 <?php
 
-require("./php/format.php");
+require("./php/components/format.php");
 
 function triGenre($file_db)
 {
     $result = '';
-    $req = $file_db->query("SELECT DISTINCT genreFilm FROM films ORDER BY genreFilm");
+    $req = $file_db->query("SELECT DISTINCT genreFilm FROM films WHERE proposition=0 ORDER BY genreFilm");
     foreach ($req as $genre) {
         $result .= "<div class='trigenre'>
                     
@@ -31,12 +31,12 @@ function tri($file_db)
 {
     //tri par ordre alphabétique
     if (isset($_SESSION["triAZ"])) {
-        $result = $file_db->query('SELECT * FROM films ORDER BY titreFilm');
+        $result = $file_db->query('SELECT * FROM films WHERE proposition=0 ORDER BY titreFilm');
         unset($_SESSION["triAZ"]);
     } 
     //tri par ordre alphabétique contraire
     elseif (isset($_SESSION["triZA"])) {
-        $result = $file_db->query('SELECT * FROM films ORDER BY titreFilm DESC');
+        $result = $file_db->query('SELECT * FROM films WHERE proposition=0 ORDER BY titreFilm DESC');
         unset($_SESSION["triZA"]);
     } 
     //tri par genre
@@ -46,13 +46,13 @@ function tri($file_db)
     //gestion de la search bar
     else if (isset($_SESSION['search'])) {
         $titre = $_SESSION['search'];
-        $req = "SELECT * FROM films WHERE titreFilm LIKE '%" . $titre . "%'";
+        $req = "SELECT * FROM films WHERE titreFilm LIKE '%" . $titre . "%' AND proposition=0";
         $result = $file_db->query($req);
         unset($_SESSION['search']);
     } 
     //par défaut : tri par date
     else {
-        $result = $file_db->query('SELECT * FROM films ORDER BY anneeFilm DESC');
+        $result = $file_db->query('SELECT * FROM films  WHERE proposition=0 ORDER BY anneeFilm DESC');
         if (isset($_SESSION["tridate"])) {
             unset($_SESSION["tridate"]);
         }

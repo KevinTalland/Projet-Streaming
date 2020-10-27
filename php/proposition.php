@@ -15,6 +15,9 @@ date_default_timezone_set('Europe/Paris');
     <link rel="stylesheet" href="../assets/nav.css">
     <link rel="stylesheet" href="../assets/proposition.css">
     <link rel="stylesheet" href="../assets/form.css">
+    <link rel="stylesheet" href="../assets/responsive-footer.css">
+    <link rel="stylesheet" href="../assets/responsive-topbar.css">
+    <link rel="stylesheet" href="../assets/responsive-prop.css">
     <link rel="shortcut icon" href="../assets/favicon.jpg" type="image/x-icon">
 </head>
 
@@ -37,7 +40,7 @@ date_default_timezone_set('Europe/Paris');
                 }
                 else {
                     require_once('./components/ajoutFilm.php');
-                    getAjoutFilm("Quel film voudriez-vous voir sur notre site ?","./proposer.php");
+                    getAjoutFilm("Quel film voudriez-vous voir sur notre site ?","./proposition/proposer.php");
 
                 }
             } else {

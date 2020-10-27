@@ -20,7 +20,7 @@ function getFooter($lienAccueil, $lienProp, $lienGestion)
         $footer .= "
         </p>
 
-        <p class='footer-name'>Talland Kevin - Lemaire Xavier © 2020</p>
+        <p class='footer-name'>Talland Kevin © 2020</p>
     </div>
 
     <div class='footer-center'>
@@ -35,7 +35,6 @@ function getFooter($lienAccueil, $lienProp, $lienGestion)
 
         <div class='footer-contact'>
             <p><a href='mailto:kevin.talland@etu.univ-orleans.fr'>kevin.talland@etu.univ-orleans.fr</a></p>
-            <p><a href='mailto:xavier.lemaire@etu.univ-orleans.fr'>xavier.lemaire@etu.univ-orleans.fr</a></p>
         </div>
 
     </div>

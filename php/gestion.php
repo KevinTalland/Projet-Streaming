@@ -17,6 +17,9 @@ if (!isset($_SESSION['admin'])){
     <link rel="stylesheet" href="../assets/footer.css">
     <link rel="stylesheet" href="../assets/nav.css">
     <link rel="stylesheet" href="../assets/form.css">
+    <link rel="stylesheet" href="../assets/responsive-footer.css">
+    <link rel="stylesheet" href="../assets/responsive-topbar.css">
+    <link rel="stylesheet" href="../assets/responsive-gestion.css">
     <link rel="shortcut icon" href="../assets/favicon.jpg" type="image/x-icon">
 </head>
 
@@ -47,7 +50,7 @@ if (!isset($_SESSION['admin'])){
                 
             <?php
                 require_once('./components/ajoutFilm.php');
-                getAjoutFilm("Formulaire d'ajout de film","./ajouter.php");
+                getAjoutFilm("Formulaire d'ajout de film","./gestionfilms/ajouter.php");
                 
             }
             echo "<p><i>Dernière connexion le " . date("d-m-Y à H:i", $_SESSION['time']) . "</i></p>";

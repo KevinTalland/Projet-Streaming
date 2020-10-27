@@ -10,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login to KXStreaming</title>
     <link rel="stylesheet" href="../../assets/login.css">
+    <link rel="stylesheet" href="../../assets/responsive-login.css">
 </head>
 <body>
     <section>

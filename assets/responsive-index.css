@@ -1,0 +1,34 @@
+@media (max-width: 975px) {
+    html,
+    body {
+        font-size: 13px;
+    }
+    h4.sidebar-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 875px) {
+    section div.article {
+        flex-basis: 33%;
+    }
+}
+
+@media (max-width: 785px) {
+    section {
+        width: 100%;
+    }
+    .aside {
+        width: 100%;
+        float: none;
+    }
+    .affiche {
+        width: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    section div.article {
+        flex-basis: 50%;
+    }
+}

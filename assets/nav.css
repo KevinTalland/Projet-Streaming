@@ -25,11 +25,10 @@
 
 .topbar .searchBar input[type=search] {
     outline: none;
-    background: var(--color-light);
     padding: .2em 1.6rem;
     border-radius: 1em 0 0 1em;
-    transition: all var(--dur) var(--bez);
-    transition-property: width, border-radius;
+    transition: all 2s;
+    transition-property: border-radius;
 }
 
 .topbar .searchBar>form {

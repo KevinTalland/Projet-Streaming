@@ -1,16 +1,16 @@
 <?php
 date_default_timezone_set('Europe/Paris');
 session_start();
-require_once('./format.php');
+require_once('../components/format.php');
 
 if (isset($_POST['annuler'])) {
     unset($_SESSION['modif']);
-    header("Location:../index.php");
+    header("Location:..//..index.php");
 }
 
 try {
     unset($_SESSION['modif']);
-    $file_db = new PDO('sqlite:../tmp/films.sqlite');
+    $file_db = new PDO('sqlite:../../tmp/films.sqlite');
     $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
     $update = "UPDATE films SET "; //UPDATE films SET $cle='$valeur' where titreFilm = SESSION['titreFilm']
@@ -48,4 +48,4 @@ try {
 
 unset($_SESSION['titreFilm']);
 unset($_SESSION['modif']);
-header("Location:../index.php");
+header("Location:../../index.php");

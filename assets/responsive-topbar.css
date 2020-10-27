@@ -1,0 +1,40 @@
+@media (max-width: 975px) {
+    .topbar span {
+        margin: 0;
+    }
+}
+
+@media (max-width: 875px) {
+    .topbar .searchBar {
+        width: 10rem;
+    }
+    .topbar .searchBar input {
+        width: 100%;
+    }
+    .searchBar input:not(:placeholder-shown)+button {
+        display: none;
+    }
+}
+
+@media (max-width: 785px) {
+    .topbar {
+        position: static;
+    }
+    .topbar .social span {
+        display: none;
+    }
+}
+
+@media (max-width: 670px) {
+    .topbar nav {
+        flex-basis: 60%;
+    }
+    .topbar .searchBar {
+        flex-basis: 40%;
+    }
+    .topbar .social {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

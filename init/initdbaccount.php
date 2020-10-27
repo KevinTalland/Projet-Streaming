@@ -6,8 +6,7 @@ try {
 
     $file_db->exec("drop table account");
     $file_db->exec("CREATE TABLE account ( 
-    idAcc INTEGER PRIMARY KEY,
-    nomAcc TEXT,
+    nomAcc TEXT PRIMARY KEY,
     passwordAcc TEXT,
     administrateur BOOLEAN,
     timeAcc INTEGER)");
@@ -25,9 +24,9 @@ try {
     $stmt->execute();
 
     $file_db = null;
+    
+    header("Location: ../index.php");
 } catch (PDOException $ex) {
     echo $ex->getMessage();
     header("Location:../php/error.html");
 }
-
-header("Location: ../index.php");

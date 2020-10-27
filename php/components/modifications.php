@@ -1,7 +1,7 @@
 <?php
 function getSupprButton()
 {
-    return "<form action='./php/supprimer.php' method='post'>
+    return "<form action='./php/gestionfilms/supprimer.php' method='post'>
             <input type='hidden' name='titre' value=\"" . $_GET['film'] . "\">
             <button type='submit' name='suppr'>Supprimer</button>
             </form>";
@@ -10,7 +10,7 @@ function getSupprButton()
 if (isset($_SESSION['modif'])) {
     function getModifTitle()
     {
-        return "<form action='./php/modification.php' method='post'>
+        return "<form action='./php/gestionfilms/modification.php' method='post'>
             <div><input type='text' name='titreFilm' placeholder='Modifier le titre'></div>";
     }
 

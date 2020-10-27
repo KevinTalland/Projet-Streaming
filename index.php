@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 date_default_timezone_set('Europe/Paris');
 require_once("./php/tri/triFunction.php");
-require_once("./php/format.php");
+require_once("./php/components/format.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,6 +19,9 @@ require_once("./php/format.php");
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/generate.css">
     <link rel="stylesheet" href="./assets/form.css">
+    <link rel="stylesheet" href="./assets/responsive-index.css">
+    <link rel="stylesheet" href="./assets/responsive-footer.css">
+    <link rel="stylesheet" href="./assets/responsive-topbar.css">
     <link rel="shortcut icon" href="./assets/favicon.jpg" type="image/x-icon">
 </head>
 
