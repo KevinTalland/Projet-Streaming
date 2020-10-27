@@ -36,11 +36,6 @@ button:hover {
     background: rgb(231, 58, 39);
 }
 
-.affiche {
-    width: 100px;
-    height: auto;
-}
-
 section {
     background: #FFF;
     float: left;
@@ -54,8 +49,19 @@ section {
     margin: 2vh 0 5vh 2vw;
 }
 
+section>h3 {
+    height: fit-content;
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 1.3rem;
+}
+
 section div.article {
     flex-basis: 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 section div.article a {
@@ -70,53 +76,20 @@ section div.article .affiche {
     margin: 1em auto;
 }
 
+.affiche {
+    width: 100px;
+    height: auto;
+}
+
 section div.article span {
     margin: 0 auto;
     width: 80%;
-}
-
-section div.article {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 
 section div.article:hover {
     transform: scale(1.2);
     transition: all 0.4s ease-in-out;
     cursor: pointer;
-}
-
-.film_add,
-.film_suppr {
-    background-color: lightgray;
-    border-radius: 2em;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 5vh auto;
-    align-items: center;
-    text-align: center;
-}
-
-.film_add,
-.film_suppr>* {
-    padding: 1em;
-}
-
-.film_add div {
-    align-self: center;
-}
-
-legend {
-    background-color: gray;
-    padding: 1em;
-    border-radius: 1em;
-    margin: 0 auto;
-}
-
-.film_add div {
-    margin: 10vh auto;
 }
 
 .banniere {
@@ -146,45 +119,12 @@ legend {
     max-width: 60vw;
 }
 
-.article-img {
-    margin-right: 1vw;
-}
-
-.container-article {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 60%;
-}
-
-.article-date {
-    font-weight: 300px;
-    color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 1em;
-    ;
-}
-
-.article-title {
-    font-size: 2rem;
-    margin: 1rem 0px;
-    font-family: "Cardo", serif;
-    margin: 0 1em 0 0;
-}
-
-.article-title a {
-    text-decoration: none;
-    color: black
-}
-
-.article-title a:hover {
-    text-decoration: underline;
-}
-
 .aside {
     background: #fbfbfb;
     float: right;
     height: auto;
     width: 20%;
-    padding: 3vw;
+    padding: 2em;
     z-index: 1;
     position: relative;
 }
@@ -205,7 +145,11 @@ legend {
 }
 
 .aside a:hover {
-    text-decoration: underline
+    color: #686868;
+}
+
+aside li:hover {
+    transform: scale(1.02);
 }
 
 .sidebar-title {
@@ -225,45 +169,14 @@ legend {
     margin: 0.5rem 0;
 }
 
-@media screen and (max-width: 1200px) {
-    .main {
-        width: 100%;
-    }
-    .aside {
-        width: 100%;
-    }
-    .article {
-        max-width: 100%;
-        margin: 8vh 2vw;
-    }
+.admin-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 3em auto;
 }
 
-@media screen and (max-width: 850px) {
-    .article {
-        display: initial;
-    }
-    .article-img {
-        display: block;
-        text-align: center
-    }
-    .article-date,
-    .article-title,
-    .container-article p {
-        text-align: center
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .topbar {
-        position: absolute;
-    }
-    .social,
-    .topbar nav {
-        display: block;
-        float: none;
-        text-align: center;
-    }
-    .social {
-        margin-top: 2vh;
-    }
+.admin-buttons button {
+    padding: 1em 1.5em;
 }

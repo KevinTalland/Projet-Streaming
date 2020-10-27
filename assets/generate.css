@@ -1,4 +1,4 @@
-section.generate {
+div.generate {
     width: 100%;
     margin: 5vh 0;
     text-align: center;
@@ -8,11 +8,11 @@ section.generate {
     padding: 3em;
 }
 
-section.generate h1 {
+div.generate h1 {
     margin-bottom: 5vh;
 }
 
-section.generate>div>div:last-child {
+div.generate>div>div:last-child {
     display: flex;
     flex-direction: column;
     background: rgba(148, 148, 148, 0.6);
@@ -20,27 +20,24 @@ section.generate>div>div:last-child {
     padding: 1em 2em;
 }
 
-section.generate>div>div:first-child {
+div.generate>div>div:first-child {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-section.generate .img_film_generate {
+div.generate .img_film_generate {
     margin: 2em;
 }
 
-section.generate .img_film_generate img {
+div.generate .img_film_generate img {
     width: 200px;
     height: auto;
 }
 
-section.generate button {
+div.generate button {
     float: right;
-}
-
-section.generate button {
     padding: 0.5em 1em;
     border-radius: 0.5em;
     border: none;
@@ -51,33 +48,33 @@ section.generate button {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
-    background: rgb(16, 170, 29);
+    background: #333;
     color: #fff;
 }
 
-section.generate button:hover {
+div.generate button:hover {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transform: scale(.9);
     transition: all 0.3s;
-    background: rgb(11, 122, 21);
+    background: rgb(231, 58, 39);
 }
 
-section.generate input[type=text] {
+div.generate input[type=text] {
     width: 20vw;
 }
 
-section.generate .submit-modif {
+div.generate .submit-modif {
     margin-top: 5vh;
     display: flex;
     justify-content: center;
 }
 
-section.generate .submit-modif>* {
+div.generate .submit-modif>* {
     margin: 1em;
 }
 
-section.generate .submit-modif input[type=submit] {
+div.generate .submit-modif input[type=submit] {
     padding: 0.5em 1em;
     border-radius: 0.5em;
     border: none;
@@ -91,25 +88,38 @@ section.generate .submit-modif input[type=submit] {
     color: #fff;
 }
 
-section.generate .submit-modif input[type=submit]:hover {
+div.generate .submit-modif input[type=submit]:hover {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transform: scale(.9);
     transition: all 0.3s;
 }
 
-section.generate .submit-modif input[type=submit]:first-child {
+div.generate .submit-modif input[type=submit]:first-child {
     background: rgb(16, 170, 29);
 }
 
-section.generate .submit-modif input[type=submit]:last-child {
+div.generate .submit-modif input[type=submit]:last-child {
     background: rgb(211, 19, 19)
 }
 
-section.generate .submit-modif input[type=submit]:first-child:hover {
+div.generate .submit-modif input[type=submit]:first-child:hover {
     background: rgb(11, 122, 21);
 }
 
-section.generate .submit-modif input[type=submit]:last-child:hover {
+div.generate .submit-modif input[type=submit]:last-child:hover {
     background: rgb(163, 14, 14);
+}
+
+div.trigenre {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+}
+
+div.trigenre h2 {
+    flex-basis: 100%;
+    padding: 1em;
+    box-shadow: 0 0 20px 10px hsla(204, 70%, 53%, 0.5);
 }

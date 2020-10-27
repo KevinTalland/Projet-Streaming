@@ -1,6 +1,7 @@
 <?php
     session_start();
     date_default_timezone_set('Europe/Paris');
+    require_once("./reqLogin.php");
     
     //Si les informations du formulaire ont correctement été récupérées on tente la connexion à la BD
     if (isset($_POST['loginNom'])){
@@ -8,77 +9,43 @@
         $password = md5(htmlentities($_POST['loginPassword']));
         $time = strtotime(date("Y-m-d H:i:s"));
     }
+    else if (isset($_POST['signupNom'])){
+        $nom = htmlentities($_POST['signupNom']);
+        $password = md5(htmlentities($_POST['signupPassword']));
+        $password2 = md5(htmlentities($_POST['confirmationPassword']));
+        $time = strtotime(date("Y-m-d H:i:s"));
+    }
+
+    var_dump($_POST);
        
     //On tente de se connecter à la BD
-    try {
-        $file_db = new PDO('sqlite:../../tmp/films.sqlite');
-        $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
-        //On récolte les noms utilisateurs
-        $verif = 'SELECT nomAcc FROM account';
-        $res = $file_db->query($verif);
-        $listeUsers = array();
-        foreach ($res as $n){
-            array_push($listeUsers, $n['nomAcc']);
-        }
-
-        if (isset($nom)){
-            //Si le nom n'est pas répertorié dans la BD, on l'y insère
-            if (!in_array($nom, $listeUsers)){
-                $insert = 'INSERT INTO account (nomAcc, passwordAcc, timeAcc, administrateur) VALUES (:nom, :password, :time, 0)';
-                $stmt = $file_db->prepare($insert);
-                $stmt->error_reporting;
+    if (isset($_POST['loginNom']) || isset($_POST['signupNom'])){
+        try {
+            $file_db = new PDO('sqlite:../../tmp/films.sqlite');
+            $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     
-                $stmt->bindParam(":nom",$nom,PDO::PARAM_STR);
-                $stmt->bindParam(":password",$password);
-                $stmt->bindParam(":time",$time,PDO::PARAM_INT);
-                $stmt->execute();
-                header("Location:../../index.php");
+            $listeUsers = getUsers($file_db);
+    
+            //Si le nom n'est pas répertorié dans la BD, on l'y insère
+            if (isset($_POST['signupNom'])){
+                if (!in_array($nom, $listeUsers)){
+                    inscription($file_db,$nom,$password,$password2,$time);
+                } else {
+                    header("Location:".$_SERVER['HTTP_REFERER']);
+                }
             } 
-            //Sinon on verifie que le mot de passe correspond au nom saisi
+            //Sinon on connecte l'utilisateur
             else {
-                $mdp = 'select passwordAcc from account where nomAcc=:nom';
-                $stmt = $file_db->prepare($mdp);
-                $stmt->bindParam(":nom",$nom, PDO::PARAM_STR);
-                $stmt->execute();
-                $res = $stmt->fetchColumn();
-
-                //Si le mdp saisi est correct, on autorise la connexion
-                if ($res == $password){
-                    $update = 'UPDATE account SET timeAcc=:time where nomAcc=:nom';
-                    $stmt = $file_db->prepare($update);
-                    $stmt->bindParam(":nom",$nom, PDO::PARAM_STR);
-                    $stmt->bindParam(":time",$time, PDO::PARAM_INT);
-                    $stmt->execute();
-
-                    $admin = "SELECT administrateur from account where nomAcc=:nom";
-                    $stmt = $file_db->prepare($admin);
-                    $stmt->bindParam(":nom",$nom,PDO::PARAM_STR);
-                    $stmt->execute();
-                    $res = $stmt->fetchColumn();
-
-                    //Si la personne est administrateur
-                    if ($res == 1){
-                        $_SESSION['admin'] = 1;
-                    }
-                    
-                    $_SESSION['nom'] = $nom;
-                    $_SESSION['time'] = $time;
-
-                    header("Location:../../index.php");
-                }
-                //Sinon il doit recommencer
-                else {
-                    header("Location:./login.php");
-                }
-                
+                connexion($file_db, $nom, $password, $time);
             }
+            
+            $file_db=null;
+            
+        } catch(PDOException $e){
+            $e->getMessage();
+            //Si la connexion à la BD échoue on le redirige vers une page d'erreur
+            header("Location:../error.html");
         }
-        
-
-        $file_db=null;
-    } catch(PDOException $e){
-        $e->getMessage();
-        //Si la connexion à la BD échoue on le redirige vers une page d'erreur
-        header("Location:../error.html");
+    
     }
+    

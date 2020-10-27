@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Paris');
 session_start();
-require_once('./function.php');
+require_once('./format.php');
 
 if (isset($_POST['annuler'])) {
     unset($_SESSION['modif']);
@@ -9,6 +9,7 @@ if (isset($_POST['annuler'])) {
 }
 
 try {
+    unset($_SESSION['modif']);
     $file_db = new PDO('sqlite:../tmp/films.sqlite');
     $file_db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
@@ -18,11 +19,13 @@ try {
         if ($valeur != "") {
             $update .= $cle . "=";
             if ($cle == 'anneeFilm') {
-                var_dump($valeur);
                 $valeur = strtotime($valeur);
-                var_dump($valeur);
                 $update .= $valeur . ",";
-            } else if (is_string($valeur)) {
+            } else if ($cle == 'titreFilm'){
+                $update .= '"' . $valeur . '",';
+                $update .= 'titreFilmURL = "' . getTitleFormat($valeur) . '",';
+            }
+            else if (is_string($valeur)) {
                 $update .= '"' . $valeur . '",';
             } else if (is_int($valeur)) {
                 $update .= $valeur . ",";
@@ -34,28 +37,13 @@ try {
 
     $update .= ' where titreFilm="' . $_SESSION['titreFilm'] . '"';
 
-    $titreReq = 'SELECT titreFilm FROM films WHERE titreFilm="'.$_SESSION['titreFilm'].'"';
-    $titre1 = $file_db->query($titreReq);
-    $titreAvant = $titre1->fetchColumn();
-
     $stmt = $file_db->exec($update);
 
-    //titreApres est recherché en fonction de l'ancien titre pour voir si il a changé
-    $titreReq = 'SELECT titreFilm FROM films WHERE titreFilm="'.$titreAvant.'"';
-    $titre2 = $file_db->query($titreReq);
-    $titreApres = $titre2->fetchColumn();
-
-    //si le titre a changé, on efface l'ancien fichier php
-    if ($titreAvant != $titreApres){
-        $nom = getTitleFormat($titreAvant);
-        $titrePage = $nom.".php";
-        $path="./pages/";
-        unlink($path.$titrePage);
-    }
-
     $file_db = null;
+    
 } catch (PDOException $ex) {
     echo $ex->getMessage();
+    header("Location:./error.html");
 }
 
 unset($_SESSION['titreFilm']);

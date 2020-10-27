@@ -27,6 +27,7 @@ try {
     $file_db = null;
 } catch (PDOException $ex) {
     echo $ex->getMessage();
+    header("Location:../php/error.html");
 }
 
 header("Location: ../index.php");

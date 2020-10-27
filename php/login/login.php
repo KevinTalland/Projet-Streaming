@@ -1,7 +1,6 @@
 <?php
     session_start();
     session_destroy();
-    session_start();
 ?>
 
 <html lang="en">
@@ -16,15 +15,18 @@
     <section>
         <form action="./verifLogin.php" method="post">
             <div>
-                <label for="loginNom">Nom :</label>
-                <input type="text" name='loginNom' required>
+                <div>
+                    <label for="loginNom">Nom : </label>
+                    <input type="text" name='loginNom' required>
+                </div>
+                <div>
+                    <label for="loginPassword">Mot de Passe : </label>
+                    <input type="password" name="loginPassword" required>
+                </div>
             </div>
+            <p><a href='./signup.php'>Pas encore inscrit ? Inscrivez-vous ici !</a></p>
             <div>
-                <label for="loginPassword">Password :</label>
-                <input type="password" name="loginPassword" required>
-            </div>
-            <div>
-                <input type="submit">
+                <input type="submit" value="Se connecter">
             </div>
         </form>
     </section>

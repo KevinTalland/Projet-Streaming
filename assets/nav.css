@@ -12,6 +12,17 @@
     justify-content: space-between;
 }
 
+.topbar span {
+    color: #ffffff;
+    opacity: .8;
+    margin-right: 3em;
+    padding: 0.3em 1em;
+    border-radius: 2em;
+    background-color: #333;
+    text-align: center;
+    vertical-align: middle;
+}
+
 .topbar .searchBar input[type=search] {
     outline: none;
     background: var(--color-light);
